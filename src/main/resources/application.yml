@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active:
+      #      dev
+      default
+  jackson:
+    default-property-inclusion: NON_NULL
+  datasource:
+    name: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/bookstore?allowPublicKeyRetrieval=true&useUnicode=true&useSSL=false&characterEncoding=utf-8
+    username: root
+    password: root@2022
+  jpa:
+    database: mysql
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        jdbc:
+          batch_size: 100
+          batch_versioned_data: true
+        order_inserts: true
+        order_updates: true
+jwt:
+  secret: bookstore
+  expiration: 604800
+  header: Authorization
+  prefix: "Bearer_"
+
+server:
+  port: 8080
+  servlet:
+    context-path: /bookstore/api
+
+

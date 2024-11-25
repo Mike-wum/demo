@@ -1,0 +1,19 @@
+INSERT INTO `book` (`id`, `author`, `category`, `name`, `price`, `publisher`, `sn`)
+VALUES
+	(1,'author1',1,'bookname1',100.00,'pub1','sn1'),
+	(2,'author2',1,'bookname2',100.00,'pub2','sn2'),
+	(3,'author3',1,'bookname3',100.00,'pub3','sn3');
+
+INSERT INTO `inventory` (`id`, `book_id`, `sku_code`, `stock`)
+VALUES
+	(1,1,'sku11',20),
+	(2,2,'sku22',20);
+
+INSERT INTO `order_detail` (`id`, `amount`, `create_time`, `status`, `user_id`)
+VALUES
+	(1,200.00,'2024-11-25 07:32:07',0,1);
+
+INSERT INTO `order_item` (`id`, `price`, `quantity`, `book_id`, `order_detail_id`)
+VALUES
+	(1,100.00,8,1,1),
+	(2,100.00,8,2,1);
